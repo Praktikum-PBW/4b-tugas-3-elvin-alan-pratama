@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deret Fibonacci</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Elvin Alan Pratama | 2010631170065  -->
+    <div class="container">
+        <form id="form" action="" method="POST">
+            <h1>Deret Fibonacci</h1>
+            <label for="number">Masukkan jumlah deret</label>
+            <br>
+            <input type="number" id="number1" autofocus>
+            <br>
+            <button type="button" id="button">Submit</button>
+            <input type="reset" id="reset" value="Reset">
+            <br>
+            <label for="result">Hasil :</label>
+            <br>
+            <span class="result"></span>
+        </form>
+    </div>
+    <script>
+        document.getElementById("button").onclick = () => {
+            const number = document.getElementById("number1").value;
+
+            const fibonacci = parseInt(number);
+            let n1 = 0, n2 = 1, nextNum;
+
+            if(number==0){
+                alert("Angkanya harus valid bang")
+                return 0;
+            }
+            else{
+                for (let i=1; i<= fibonacci; i++){
+                    console.log(n1);
+                    nextNum = n1 + n2;
+                    n1 = n2;
+                    n2 = nextNum;
+
+                    let p = document.createElement("p");
+                    p.appendChild(document.createTextNode(n1));
+                    let element = document.querySelector(".result");
+                    element.appendChild(p);
+                    }
+                }
+            return 0;       
+        }
+
+        document.getElementById("reset").onclick = () => {
+            location.reload();
+        }
+    </script>
+</body>
+</html>

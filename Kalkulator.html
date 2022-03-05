@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Elvin Alan Pratama | 2010631170065  -->
+    <div class="container">
+        <form id="form" action="" method="POST">
+            <h1>Kalkulator</h1>
+            <label for="number1">Masukkan angka 1</label>
+            <br>
+            <input type="number" id="number1" autofocus>
+            <br>
+            <label for="number1">Masukkan angka 2</label>
+            <br>
+            <input type="number" id="number2">
+            <br>
+            <label for="text">Pilih operator</label>
+            <br>
+            <input class="operator" id=button type="button" onclick="add()"value="+">
+            <input class="operator" id=button type="button" onclick="sub()"value="-">
+            <input class="operator" id=button type="button" onclick="mul()"value="x">
+            <input class="operator" id=button type="button" onclick="div()"value="÷">
+            <input class="operator" id=button type="button" onclick="mod()"value="%">
+            <input type="reset" id="reset" value="C">
+            <br>
+            <label for="result">Hasil :</label>
+            <br>
+            <span class="result"></span>
+        </form>
+    </div>
+    <script>
+        const add = () => {
+            const number1 = parseFloat(document.getElementById("number1").value);
+            const number2 = parseFloat(document.getElementById("number2").value);
+            let result = number1 + number2;
+
+            let p = document.createElement("p");
+            p.appendChild(document.createTextNode(result));
+            let element = document.querySelector(".result");
+            element.appendChild(p);
+        }
+
+        const sub = () => {
+            const number1 = parseFloat(document.getElementById("number1").value);
+            const number2 = parseFloat(document.getElementById("number2").value);
+            let result = number1 - number2;
+
+            let p = document.createElement("p");
+            p.appendChild(document.createTextNode(result));
+            let element = document.querySelector(".result");
+            element.appendChild(p);
+        }
+
+        const mul =() => {
+            const number1 = parseFloat(document.getElementById("number1").value);
+            const number2 = parseFloat(document.getElementById("number2").value);
+            let result = number1 * number2;
+
+            let p = document.createElement("p");
+            p.appendChild(document.createTextNode(result));
+            let element = document.querySelector(".result");
+            element.appendChild(p);
+        }
+
+        const div =() => {
+            const number1 = parseFloat(document.getElementById("number1").value);
+            const number2 = parseFloat(document.getElementById("number2").value);
+            let result = number1 / number2;
+
+            let p = document.createElement("p");
+            p.appendChild(document.createTextNode(result));
+            let element = document.querySelector(".result");
+            element.appendChild(p);
+        }
+
+        const mod =() => {
+            const number1 = parseFloat(document.getElementById("number1").value);
+            const number2 = parseFloat(document.getElementById("number2").value);
+            let result = number1 % number2;
+
+            let p = document.createElement("p");
+            p.appendChild(document.createTextNode(result));
+            let element = document.querySelector(".result");
+            element.appendChild(p);
+        }
+
+        document.getElementById("reset").onclick = () => {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
